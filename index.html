@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Quiz & API Project</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1><i class="fas fa-brain"></i> Interactive Quiz & Joke Fetcher</h1>
+      <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <label class="switch">
+          <input type="checkbox" id="theme-switch">
+          <span class="slider round"></span>
+        </label>
+        <i class="fas fa-sun"></i>
+      </div>
+    </header>
+
+    <main>
+      <section id="quiz-section">
+        <div class="section-header">
+          <h2><i class="fas fa-question-circle"></i> Quiz</h2>
+          <div class="quiz-stats">
+            <span id="score">Score: 0</span>
+            <span id="timer">Time: 30s</span>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" id="quiz-progress"></div>
+          </div>
+          <span id="question-number">Question 1/3</span>
+        </div>
+        <div id="quiz-container">
+          <p id="question"></p>
+          <div id="answers"></div>
+          <div class="quiz-controls">
+            <button id="next-btn" class="btn primary">Next <i class="fas fa-arrow-right"></i></button>
+            <button id="restart-btn" class="btn secondary" style="display: none;">
+              <i class="fas fa-redo"></i> Restart Quiz
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="api-section">
+        <div class="section-header">
+          <h2><i class="fas fa-laugh"></i> Random Jokes</h2>
+          <div class="category-selector">
+            <select id="joke-category">
+              <option value="general">General</option>
+              <option value="programming">Programming</option>
+              <option value="knock-knock">Knock Knock</option>
+            </select>
+          </div>
+        </div>
+        <div class="joke-container">
+          <div id="joke-loading" class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading joke...</p>
+          </div>
+          <div id="joke-content">
+            <p id="joke-setup"></p>
+            <p id="joke-punchline" class="hidden"></p>
+          </div>
+          <div class="joke-controls">
+            <button id="joke-btn" class="btn primary">
+              <i class="fas fa-sync-alt"></i> New Joke
+            </button>
+            <button id="reveal-btn" class="btn secondary">
+              <i class="fas fa-eye"></i> Reveal Punchline
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Created with <i class="fas fa-heart"></i> | <span id="current-year"></span></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
